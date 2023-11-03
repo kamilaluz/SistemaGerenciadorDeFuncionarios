@@ -8,5 +8,8 @@ namespace GerenciarFuncionarios.Classes
 {
     internal interface IFuncionarios
     {
+        double ReajustarSalario();
+        double CalcularPPR();
+        void ExibirInformacoes();
     }
 }
