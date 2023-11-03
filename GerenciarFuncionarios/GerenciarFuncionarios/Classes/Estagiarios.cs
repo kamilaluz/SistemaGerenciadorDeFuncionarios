@@ -6,23 +6,24 @@ using System.Threading.Tasks;
 
 namespace GerenciarFuncionarios.Classes
 {
-    public class Efetivos : Funcionarios
+    public class Estagiarios : Funcionarios
     {
-        public Efetivos(string nome, int numIdentificacao, string dataNascimento, string cargo, double salario, string telefone) : base(nome, numIdentificacao, dataNascimento, cargo, salario, telefone) { }
+        public Estagiarios(string nome, int numIdentificacao, string dataNascimento, string cargo, double salario, string telefone) : base(nome, numIdentificacao, dataNascimento, cargo, salario, telefone) { }
 
         public override double ReajustarSalario()
         {
-            return Salario + (Salario * 0.1);
+            return Salario + (Salario * 0.05);
         }
 
         public override double CalcularPPR()
         {
-            return 2 * Salario;
+            return 0.5 * Salario;
         }
 
         public override void ExibirInformacoes()
         {
-            Console.WriteLine($"Olá, meu nome é {Nome}, sou {Cargo} no Senai, trabalho como funcionário(a) Efetivo(a).");
+            Console.WriteLine($"Olá, meu nome é {Nome}, sou {Cargo} no Senai, trabalho como Estagiário(a).");
+            Console.WriteLine($"Eu espero logo ser contratado(a) como efetivo(a).");
             Console.WriteLine($"Reajuste Salarial: R$ {ReajustarSalario().ToString("C")}");
             Console.WriteLine($"PPR: R$ {CalcularPPR().ToString("C")}");
         }
